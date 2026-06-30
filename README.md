@@ -43,8 +43,8 @@ This documentation also serves as AI coding context (`CLAUDE.md`) — the projec
 ## Local Development
 
 ```bash
-# Clone the repository
-git clone https://github.com/sbuzonas/buzonas.dev.git
+# Clone the repository (include governance submodule)
+git clone --recurse-submodules https://github.com/sbuzonas/buzonas.dev.git
 cd buzonas.dev
 
 # Install dependencies

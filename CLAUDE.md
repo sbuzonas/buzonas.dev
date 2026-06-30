@@ -471,15 +471,15 @@ Do not implement these unless explicitly instructed:
 
 ## 14. Governance References
 
-Full documentation lives in `sbuzonas/buzonas.dev-governance`:
+Full documentation lives in `.governance/` (git submodule — `sbuzonas/buzonas.dev-governance`):
 
 | Document | Purpose |
 |----------|---------|
-| `PRD.md` | Product requirements, section specs, release phases |
-| `TAD.md` | Technical architecture, repo layout, pipeline design |
-| `ADRs.md` | 13 architectural decision records with full rationale |
-| `buzonas-brand-guide.md` | Color system, typography, visual elements, tone |
-| `component-inventory.md` | Full component list, props interfaces, data sources |
+| `.governance/PRD.md` | Product requirements, section specs, release phases |
+| `.governance/TAD.md` | Technical architecture, repo layout, pipeline design |
+| `.governance/ADRs.md` | 16 architectural decision records with full rationale |
+| `.governance/buzonas-brand-guide.md` | Color system, typography, visual elements, tone |
+| `.governance/component-inventory.md` | Full component list, props interfaces, data sources |
 
 When in doubt about a decision, check the ADRs before suggesting an alternative. If an ADR covers the question, the decision is made.
 
