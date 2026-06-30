@@ -76,9 +76,7 @@ export default function RootLayout({
           // Hydration mismatch is expected with FOUC pattern
           suppressHydrationWarning={true}>
       <head>
-        {/* eslint-disable-next-line react/no-danger */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-        {/* eslint-disable-next-line react/no-danger */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
