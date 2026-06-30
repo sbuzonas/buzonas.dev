@@ -37,7 +37,13 @@ jobs:
         run: npx browser-driver-manager install chrome
 
       - name: Accessibility scan (axe-core)
-        run: npx @axe-core/cli ./out --exit
+        run: |
+          npx serve out -p 4173 &
+          npx wait-on http://localhost:4173
+          URLS=$(sed -n 's|.*<loc>\(.*\)</loc>.*|\1|p' out/sitemap.xml \
+            | sed 's|https://buzonas.dev|http://localhost:4173|' \
+            | tr '\n' ' ')
+          npx @axe-core/cli $URLS --exit
 
       - name: Dead link check
         uses: lycheeverse/lychee-action@v2
