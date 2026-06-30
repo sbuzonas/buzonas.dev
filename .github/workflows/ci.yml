@@ -33,6 +33,9 @@ jobs:
       - name: Lighthouse CI
         run: npx lhci autorun
 
+      - name: Sync Chrome and ChromeDriver versions
+        run: npx browser-driver-manager install chrome
+
       - name: Accessibility scan (axe-core)
         run: npx @axe-core/cli ./out --exit
 
