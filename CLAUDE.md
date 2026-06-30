@@ -49,6 +49,7 @@ Violating these will break the build or the deployment. Check every code suggest
 - **NO `next/image` with remote optimization** — always use `unoptimized: true` or pre-optimize images manually
 - **ALL dynamic routes must export `generateStaticParams`** — missing this causes a build failure, not a 404
 - **`dynamicParams = false`** must be exported from all dynamic route pages
+- **Never scaffold a dynamic route whose `generateStaticParams()` would return `[]` at build time** — under `output: 'export'`, Next.js throws a misleading "missing generateStaticParams()" error rather than building zero pages (confirmed bug, see ADR-014/ADR-015, [vercel/next.js#71862](https://github.com/vercel/next.js/issues/71862)). If a dynamic route has zero content at the time it's built (e.g. first blog post, first reference architecture), defer creating that `page.tsx` until real content exists. The static (non-dynamic) parent index route should handle the zero-content empty state instead.
 
 ### App Router Constraints
 - **NO `'use client'` unless strictly necessary** — only Nav and ThemeToggle are client components at MVP
