@@ -1,0 +1,50 @@
+/* Print stylesheets — color + black & white (TAD §7.4, PRD §4.5) */
+
+@media print {
+  header,
+  footer,
+  nav,
+  .hero-rise,
+  .hero-fade {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+    color: #0d1b2a;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  /* Avoid splitting timeline entries / project cards across pages */
+  article,
+  li,
+  .avoid-break {
+    break-inside: avoid;
+  }
+}
+
+/* Color print — preserve brand palette */
+@media print {
+  [data-print='color'] h1,
+  [data-print='color'] h2 {
+    color: #0d1b2a;
+  }
+
+  [data-print='color'] .text-sky {
+    color: #1b3a5c !important;
+  }
+}
+
+/* Black & white print — force high-contrast monochrome */
+@media print {
+  [data-print='bw'] * {
+    color: #000000 !important;
+    background: #ffffff !important;
+    border-color: #000000 !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

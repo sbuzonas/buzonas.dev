@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+:root {
+  /* Primary palette */
+  --color-void: #0a0f1e;
+  --color-deep: #0d1b2a;
+  --color-steel: #1b3a5c;
+  --color-sky: #a8d4e6;
+  --color-glacier: #c9e8f5;
+  --color-white: #eff6fb;
+  --color-cloud: #eff6fb;
+
+  /* Secondary / accent palette */
+  --color-patriot: #8b1a2b;
+  --color-iron: #2e3f50;
+  --color-pine: #1a2b1e;
+  --color-mist: #7ba7bc;
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(160deg, #0a0f1e 0%, #1b3a5c 55%, #a8d4e6 100%);
+  --gradient-section: linear-gradient(180deg, #0d1b2a 0%, #0a0f1e 100%);
+  --gradient-accent: linear-gradient(135deg, #a8d4e6 0%, #c9e8f5 100%);
+
+  /* Default surfaces (dark = primary designed experience) */
+  --color-bg-primary: var(--color-void);
+  --color-bg-surface: var(--color-deep);
+  --color-text-primary: var(--color-cloud);
+  --color-text-muted: var(--color-mist);
+}
+
+/* Light mode — deliberately specified, not inverted (brand guide §Theming) */
+.light {
+  --color-bg-primary: #f0f7fb;
+  --color-bg-surface: #ffffff;
+  --color-text-primary: #0d1b2a;
+  --color-text-muted: #1b3a5c;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* prefers-reduced-motion guard — CLAUDE.md §9 */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-rise {
+    animation: hero-rise 600ms ease-out both;
+  }
+  .hero-fade {
+    animation: hero-fade 400ms ease-out both;
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
