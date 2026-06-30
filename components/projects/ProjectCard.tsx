@@ -13,9 +13,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <article className="relative rounded-md border-t-2 border-sky bg-deep p-6 transition-shadow hover:shadow-[0_0_24px_rgba(168,212,230,0.25)]">
       <div className="flex items-start justify-between">
         <div>
-          <h3 className="font-display text-lg font-bold text-cloud">
+          <h2 className="font-display text-lg font-bold text-cloud">
             {project.title}
-          </h3>
+          </h2>
           <p className="font-mono text-xs text-mist">
             {project.org} · {project.year}
           </p>
