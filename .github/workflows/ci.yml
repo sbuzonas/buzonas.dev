@@ -50,6 +50,6 @@ jobs:
         with:
           args: >-
             --no-progress
-            --base './out'
+            --root-dir '${{ github.workspace }}/out'
             --exclude 'linkedin\.com'
             './out/**/*.html'
