@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { ReferenceArchitecture } from '@/data/consulting'
 
 interface ArchitectureCardProps {
@@ -6,7 +7,7 @@ interface ArchitectureCardProps {
 
 export function ArchitectureCard({ architecture }: ArchitectureCardProps) {
   return (
-    <a
+    <Link
       href={`/consulting/architectures/${architecture.slug}`}
       className="block rounded-md border border-iron bg-deep p-6 italic text-mist"
     >
@@ -17,6 +18,6 @@ export function ArchitectureCard({ architecture }: ArchitectureCardProps) {
       <span className="mt-3 inline-block font-mono text-xs uppercase tracking-[0.1em]">
         Coming Soon
       </span>
-    </a>
+    </Link>
   )
 }

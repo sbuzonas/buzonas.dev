@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export async function generateStaticParams() {
   return [] // No architectures at MVP — stub only (Phase 2)
 }
@@ -13,9 +15,9 @@ export default function ArchitectureStubPage() {
       <p className="mt-2 text-mist">
         The reference architecture pattern library is in development.
       </p>
-      <a href="/consulting" className="mt-6 inline-block text-sky hover:underline">
+      <Link href="/consulting" className="mt-6 inline-block text-sky hover:underline">
         ← Back to Consulting
-      </a>
+      </Link>
     </div>
   )
 }

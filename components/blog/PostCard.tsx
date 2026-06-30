@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { BlogPost, BlogCategory } from '@/lib/blog'
 
 const ACCENT: Record<BlogCategory, string> = {
@@ -12,7 +13,7 @@ interface PostCardProps {
 
 export function PostCard({ post }: PostCardProps) {
   return (
-    <a
+    <Link
       href={`/blog/${post.slug}`}
       className={`block rounded-md border-t-2 bg-deep p-6 ${ACCENT[post.category]}`}
     >
@@ -23,6 +24,6 @@ export function PostCard({ post }: PostCardProps) {
         {post.title}
       </h3>
       <p className="mt-2 text-sm text-cloud/90">{post.excerpt}</p>
-    </a>
+    </Link>
   )
 }

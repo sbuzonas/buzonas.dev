@@ -1,4 +1,5 @@
 import { Github } from 'lucide-react'
+import Link from 'next/link'
 import { TechTag } from '@/components/shared/TechTag'
 import { StatusBadge } from '@/components/shared/StatusBadge'
 import type { Project } from '@/data/projects'
@@ -41,12 +42,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
         ) : (
           <span />
         )}
-        <a
+        <Link
           href={`/projects/${project.slug}`}
           className="text-sm text-sky hover:underline"
         >
           View Project →
-        </a>
+        </Link>
       </div>
     </article>
   )

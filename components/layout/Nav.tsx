@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from './ThemeToggle'
 
@@ -31,19 +32,19 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4 md:px-12">
-        <a href="/" className="font-display text-lg font-bold text-cloud">
+        <Link href="/" className="font-display text-lg font-bold text-cloud">
           Steve Buzonas
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="font-body text-sm text-cloud transition-colors hover:text-sky"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <ThemeToggle />
         </nav>
@@ -61,14 +62,14 @@ export function Nav() {
       {mobileOpen && (
         <nav className="flex flex-col gap-4 bg-deep px-6 py-6 md:hidden">
           {LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="font-body text-base text-cloud"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <ThemeToggle />
         </nav>
